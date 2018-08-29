@@ -1,0 +1,114 @@
+@font-face {
+    font-family: 'Bitwise';
+    src: url('./fonts/bitwise.eot');
+    src: url('./fonts/bitwise.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/bitwise.woff2') format('woff2'),
+        url('./fonts/bitwise.woff') format('woff'),
+        url('./fonts/bitwise.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.right {
+    text-align: right;
+}
+
+body {
+    background:#EBEBEB;
+    font-family: 'Bitwise';
+    font-weight: 200;
+    font-style: normal;
+}
+
+#container {
+    max-width: 450px;
+    display:flex;
+    flex-direction: column;
+    margin:2rem auto;
+}
+
+#topbar {
+    background:#333333;
+    display:flex;
+    color:#ffffff;
+}
+
+.date {
+    text-align: right;
+    height:72px; /* Height of the logo */
+    line-height:72px;
+    flex-grow: 1;
+    margin-right:20px;
+}
+
+#details {
+    background: #ffffff;
+    /*padding:8px 15px;*/
+}
+
+.receipt-table {
+    width:100%;
+    font-size: 0.8rem;
+    border:0px;
+}
+
+.receipt-table thead {
+    color:#cccccc;
+}
+
+.receipt-table thead, .receipt-table td, .receipt-table th, .receipt-table tr {
+    background-color: transparent;
+    font-weight: normal;
+    border:0px !important;
+    padding:15px;
+}
+
+.receipt-table tbody td, .receipt-table tfoot td {
+    padding:8px 15px;
+}
+
+.receipt-table tfoot {
+    margin-top:25px;
+}
+
+.receipt-table .grand-total {
+    font-size: 1.3rem;
+}
+
+.qtrCircles {
+    display:flex;
+}
+
+/*
+ * From https://paulund.co.uk/how-to-create-different-shapes-in-css
+ */
+.circle {
+    width:14px; 
+    height:14px; 
+    border:1px solid transparent;
+    background: #ebebeb; /* same as body */
+}
+
+.topright {
+    border-radius: 0 14px 0 0;
+}
+
+.topleft {
+    border-radius: 14px 0 0 0;
+}
+
+.bottomright {
+    border-radius: 0 0 0 14px;
+}
+
+.bottomleft {
+    border-radius: 0 0 14px 0;
+}
+
+.qtrCircles .dummy {
+    flex-grow: 1;
+}
+
+#barcode {
+    background: #ffffff;
+    text-align: center;
+}
