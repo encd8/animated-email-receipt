@@ -30,6 +30,9 @@ body {
     background:#333333;
     display:flex;
     color:#ffffff;
+    opacity: 1;
+    transform-origin: 50% 50%;
+    transform: translate(200,200);
 }
 
 .date {
@@ -38,11 +41,12 @@ body {
     line-height:72px;
     flex-grow: 1;
     margin-right:20px;
+    opacity: 0;
 }
 
 #details {
     background: #ffffff;
-    /*padding:8px 15px;*/
+    opacity: 0;
 }
 
 .receipt-table {
@@ -82,8 +86,8 @@ body {
  * From https://paulund.co.uk/how-to-create-different-shapes-in-css
  */
 .circle {
-    width:14px; 
-    height:14px; 
+    width:10px; 
+    height:10px; 
     border:1px solid transparent;
     background: #ebebeb; /* same as body */
 }
@@ -111,4 +115,5 @@ body {
 #barcode {
     background: #ffffff;
     text-align: center;
+    opacity: 0;
 }
