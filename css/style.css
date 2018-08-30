@@ -148,3 +148,29 @@ body {
 #barcode img {
     padding:8px;
 }
+
+/*
+ * Optional buttons
+ * From: https://codepen.io/Angelfire/pen/opdDt
+ */
+#buttons {
+    text-align: center;
+}
+
+#buttons a {
+    text-decoration: none;
+    background: green;
+    display: block;
+    position: relative;
+    float: left;
+    width: 120px;
+    padding: 0;
+    margin: 10px 20px 10px 0;
+    font-weight: 600;
+    text-align: center;
+    line-height: 50px;
+    color: #FFF;
+    border-radius: 5px;
+    transform: scale(0);
+    transform-origin: 50% 50%;
+}

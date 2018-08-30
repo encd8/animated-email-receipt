@@ -23,12 +23,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 	animTimeline.add({
 		targets: '#details',
-		rotateX: ["90deg", "0deg"],
+		rotateX: ["-90deg", "0deg"],
 	})
 
 	animTimeline.add({
 		targets: '#barcode',
-		rotateX: ['90deg', '0deg']
+		rotateX: ['-90deg', '0deg']
 	})
 
 	animTimeline.add({
@@ -37,5 +37,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		translateY: ['3px','0px'],
 		delay: function(el, i) { return (i * 200); },
 	})
+
+	/*
+	 * Optional buttons animation
+	 */
+	 animTimeline.add({
+	 	targets: '#buttons a',
+	 	scale: [0,1],
+	 	delay: (el,i) => {
+	 		return (i*400);
+	 	}
+	 })
 
 });
