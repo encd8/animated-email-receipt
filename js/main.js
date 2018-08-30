@@ -1,16 +1,19 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 
-	var animTimeline = new anime.timeline({});
-
-	animTimeline.add({
-		targets: '#apple-logo',
-		width: [0, '72px'],
-		height: [0, '72px'],
-	})
+	var animTimeline = new anime.timeline();
 
 	animTimeline.add({
 		targets: '#inner',
-		maxWidth: '450px',
+		scale: [0,1],
+		easing: 'easeOutElastic',
+	})
+
+	animTimeline.add({
+		targets: '#apple-logo',
+		left: ['50%', 0],
+		translateX: ['-50%', 0],
+		elasticity:0,
+		duration:200,
 	})
 
 	animTimeline.add({
@@ -18,7 +21,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		easing: 'easeOutQuad',
 		duration: 200,
 		scale: [0,1],
-		translateX: ['-8px', '0px']
+		translateX: ['-8px', '0px'],
+		offset: '+=0',
 	})
 
 	animTimeline.add({
@@ -39,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	})
 
 	/*
-	 * Optional buttons animation
+	 * Optional animation for replay button and credits
 	 */
 	 animTimeline.add({
 	 	targets: '#buttons a',
@@ -47,6 +51,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	 	delay: (el,i) => {
 	 		return (i*400);
 	 	}
-	 })
+	 });
 
+	 /* Replay */
+	 document.getElementById('replay-btn').onclick = () => {
+		 animTimeline.restart();
+		 return false;
+	 }
 });
