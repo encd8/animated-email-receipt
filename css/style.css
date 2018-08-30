@@ -1,10 +1,11 @@
+/* Font: https://www.1001freefonts.com/data-control.font */
 @font-face {
-    font-family: 'Bitwise';
-    src: url('./fonts/bitwise.eot');
-    src: url('./fonts/bitwise.eot?#iefix') format('embedded-opentype'),
-        url('./fonts/bitwise.woff2') format('woff2'),
-        url('./fonts/bitwise.woff') format('woff'),
-        url('./fonts/bitwise.ttf') format('truetype');
+    font-family: 'Data Control';
+    src: url('fonts/DataControl.eot');
+    src: url('fonts/DataControl.eot?#iefix') format('embedded-opentype'),
+        url('fonts/DataControl.woff2') format('woff2'),
+        url('fonts/DataControl.woff') format('woff'),
+        url('fonts/DataControl.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -14,16 +15,33 @@
 
 body {
     background:#EBEBEB;
-    font-family: 'Bitwise';
+    font-family: 'Data Control';
     font-weight: 200;
     font-style: normal;
+    letter-spacing: 0.3ch;
 }
 
-#container {
-    max-width: 450px;
+/*
+ * Outer, middle, center technique from https://stackoverflow.com/a/6182661/450733
+ */
+#outer {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+  
+#middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+  
+#inner {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 72px;
     display:flex;
     flex-direction: column;
-    margin:2rem auto;
 }
 
 #topbar {
@@ -32,21 +50,22 @@ body {
     color:#ffffff;
     opacity: 1;
     transform-origin: 50% 50%;
-    transform: translate(200,200);
 }
 
-.date {
+#date {
     text-align: right;
-    height:72px; /* Height of the logo */
+    height:72px; /* Same height as the logo */
+    color:#9E9E9E;
     line-height:72px;
     flex-grow: 1;
     margin-right:20px;
-    opacity: 0;
+    transform: scale(0);
 }
 
 #details {
     background: #ffffff;
-    opacity: 0;
+    transform-origin:top center;
+    transform: scale(0);
 }
 
 .receipt-table {
@@ -76,6 +95,10 @@ body {
 
 .receipt-table .grand-total {
     font-size: 1.3rem;
+}
+
+.receipt-table .row-anim {
+    opacity: 0;
 }
 
 .qtrCircles {
@@ -112,8 +135,16 @@ body {
     flex-grow: 1;
 }
 
+.dummy.dashed {
+    border-bottom:2px dashed #EBEBEB; /* Same color as the body bg */
+}
+
 #barcode {
     background: #ffffff;
     text-align: center;
-    opacity: 0;
+    transform-origin:top center;
+}
+
+#barcode img {
+    padding:8px;
 }
