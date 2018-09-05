@@ -50,7 +50,6 @@ body {
     background:#333333;
     display:flex;
     color:#ffffff;
-    transform-origin: 50% 50%;
     position: relative;
 }
 
